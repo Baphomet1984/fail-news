@@ -520,7 +520,7 @@ bugs.forEach((bug, i) => {
   card.addEventListener('click', () => {
     if (!card.classList.contains('revealed')) {
       card.classList.add('revealed');
-      card.querySelector('.card-status span:last-child').textContent = 'FEATURE';
+      card.querySelector('.card-status span:last-child').textContent = 'REGISTERED';
       revealed++;
       document.getElementById('counter').textContent = `${revealed} / 6 bugs revelados`;
       if (revealed === 6) {
