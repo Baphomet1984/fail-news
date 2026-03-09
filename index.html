@@ -514,18 +514,46 @@ bugs.forEach((bug, i) => {
     <button class="feature-label">${bug.feature}</button>
   `;
 
+ const grid = document.getElementById('grid');
+let revealed = 0;
+
+bugs.forEach((bug, i) => {
+  const card = document.createElement('div');
+  card.className = 'bug-card';
+  card.style.setProperty('--card-color', bug.color);
+
+  card.innerHTML = `
+    <div class="card-status">
+      <span class="status-dot"></span>
+      <span style="opacity:0.4; color:${bug.color}">BUG</span>
+    </div>
+
+    <div class="bug-code">${bug.code}</div>
+    <div class="bug-name">${bug.name}</div>
+    <div class="bug-desc">${bug.desc}</div>
+
+    <button class="feature-label">${bug.feature}</button>
+  `;
+
   card.addEventListener('click', () => {
     if (!card.classList.contains('revealed')) {
+
       card.classList.add('revealed');
+
       card.querySelector('.card-status span:last-child').textContent = 'REGISTERED';
+
       revealed++;
-     document.getElementById('counter').textContent = `${revealed} / 6 bugs revelados`;
+
+      document.getElementById('counter').textContent =
+        `${revealed} / 6 bugs revelados`;
+
       if (revealed === 6) {
         setTimeout(() => {
           document.querySelector('.footer-quote').style.opacity = '0.7';
           document.querySelector('.footer-quote').style.transition = 'opacity 1s';
         }, 400);
       }
+
     }
   });
 
