@@ -483,6 +483,19 @@ bugs.forEach(bug => {
       revealed++;
       document.getElementById('counter').textContent = `${revealed} / ${bugs.length} bugs revelados`;
     }
+<!--boton secreto-->
+if (revealed === 6) {
+
+  const secretBtn = document.getElementById("secret-btn");
+
+  secretBtn.classList.add("show");
+
+}
+document.getElementById("secret-btn").addEventListener("click", () => {
+
+  window.location.href = "https://google.com";
+
+});
   });
 
   // Click botón → solo navega (evento completamente separado)
@@ -537,19 +550,7 @@ chaosBtn.addEventListener('click', () => {
     setTimeout(() => chaosMsg.classList.remove('visible'), 2000);
   }
 });
-<!--boton secreto-->
-if (revealed === 6) {
 
-  const secretBtn = document.getElementById("secret-btn");
-
-  secretBtn.classList.add("show");
-
-}
-document.getElementById("secret-btn").addEventListener("click", () => {
-
-  window.location.href = "https://google.com";
-
-});
 </script>
 </body>
 </html>
