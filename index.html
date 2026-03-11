@@ -213,19 +213,19 @@
 
   .bug-card.revealed .bug-desc { display: block; opacity: 0.7; }
 
-  .feature-label {
-  background: transparent;
-  cursor: pointer;
-  font-family: 'Space Mono', monospace;
+.feature-label{
+display:none;
+background:transparent;
+border:1px solid var(--card-color, var(--green));
+padding:6px 10px;
+font-size:0.7rem;
+margin-top:10px;
+cursor:pointer;
 }
 
-.feature-label:hover {
-  background: var(--green);
-  color: var(--bg);
+.bug-card.revealed .feature-label{
+display:inline-block;
 }
-
-  .bug-card.revealed .feature-label { display: inline-block; opacity: 1; }
-
   .hint {
     font-size: 0.65rem;
     color: var(--white);
@@ -451,159 +451,117 @@ animate();
 
 // ── BUG DATA ──────────────────────────────────────────────────────
 const bugs = [
-  {
-    code: 'ERR_0001 ::Actualizaciones del sistema',
-    name: 'Nuevo módulo detectado.',
-    color: '#00ff88',
-    feature: 'aliados',
-    desc: 'Nombre: Portal de Aliados.Estado: activo'
-  },
-  {
-    code: 'ERR_0002 :: Reportes de visitantes',
-    name: 'Actividad inusual detectada.',
-    color: '#ff3366',
-    feature: '→ Investigando…',
-    desc: 'Países conectados hoy:México Brasil Alemania Una IP que no debería existir.'
-  },
-  {
-    code: 'ERR_0003 ::Rumores del sistema',
-    name: 'Usuarios reportan una versión del hub que no aparece en el menú.',
-    color: '#ffb300',
-    feature: '→ El sistema no confirma ni niega',
-    desc: 'Se dice que aparece solo después de las 3:33 AM.'
-  },
-  {
-    code: 'ERR_0004 ::Noticias del “ecosistema"',
-    name: 'El algoritmo volvió a cambiar',
-    color: '#00ff88',
-    feature: '→ Resultado: ninguno lo entiende.',
-    desc: 'Miles de creadores intentando entenderlo.'
-  },
-  {
-    code: 'ERR_0005 ::Alertas del sistema',
-    name: 'Intento de acceso detectado.',
-    color: '#ff3366',
-    feature: '→ Por ahora.',
-    desc: 'Origen desconocido.El gate respondió correctamente.'
-  },
-  {
-    code: 'ERR_0006 ::Puebla',
-    name: 'Puebla encabeza las muertes por influenza en México durante 2026.',
-    color: '#ffb300',
-    feature: '→ Moraleja: los virus no necesitan marketing… se promocionan solos.',
-    desc: 'En solo dos meses ya se reportan 29 fallecimientos y más de 14 mil consultas médicas por síntomas respiratorios.'
-  }
+{
+code:'ERR_0001 ::Actualizaciones del sistema',
+name:'Nuevo módulo detectado.',
+color:'#00ff88',
+feature:'→ Portal de aliados',
+link:'https://baphomet1984.github.io/alliados/',
+desc:'Nombre: Portal de Aliados. Estado: activo.'
+},
+{
+code:'ERR_0002 :: Reportes de visitantes',
+name:'Actividad inusual detectada.',
+color:'#ff3366',
+feature:'→ Investigando…',
+link:'#',
+desc:'Países conectados hoy: México, Brasil, Alemania.'
+},
+{
+code:'ERR_0003 ::Rumores del sistema',
+name:'Usuarios reportan una versión del hub que no aparece en el menú.',
+color:'#ffb300',
+feature:'→ El sistema no confirma ni niega',
+link:'#',
+desc:'Se dice que aparece solo después de las 3:33 AM.'
+},
+{
+code:'ERR_0004 ::Noticias del ecosistema',
+name:'El algoritmo volvió a cambiar',
+color:'#00ff88',
+feature:'→ Resultado: nadie lo entiende',
+link:'#',
+desc:'Miles de creadores intentando entenderlo.'
+},
+{
+code:'ERR_0005 ::Alertas del sistema',
+name:'Intento de acceso detectado.',
+color:'#ff3366',
+feature:'→ Acceso bloqueado',
+link:'#',
+desc:'Origen desconocido. El gate respondió correctamente.'
+},
+{
+code:'ERR_0006 ::Puebla',
+name:'Puebla encabeza las muertes por influenza en México durante 2026.',
+color:'#ffb300',
+feature:'→ Moraleja del sistema',
+link:'#',
+desc:'29 fallecimientos y más de 14 mil consultas médicas.'
+}
 ];
 
 // ── RENDER CARDS ──────────────────────────────────────────────────
 const grid = document.getElementById('grid');
 let revealed = 0;
 
-bugs.forEach((bug, i) => {
-  const card = document.createElement('div');
-  card.className = 'bug-card';
-  card.style.setProperty('--card-color', bug.color);
+bugs.forEach(bug => {
 
-  card.innerHTML = `
-    <div class="card-status">
-      <span class="status-dot"></span>
-      <span style="opacity:0.4; color:${bug.color}">BUG</span>
-    </div>
+const card = document.createElement('div');
+card.className='bug-card';
+card.style.setProperty('--card-color', bug.color);
 
-    <div class="bug-code">${bug.code}</div>
-    <div class="bug-name">${bug.name}</div>
-    <div class="bug-desc">${bug.desc}</div>
+card.innerHTML=`
+<div class="card-status">
+<span class="status-dot"></span>
+<span style="opacity:0.4;color:${bug.color}">BUG</span>
+</div>
 
-    <button class="feature-label">${bug.feature}</button>
-  `;
+<div class="bug-code">${bug.code}</div>
+<div class="bug-name">${bug.name}</div>
+<div class="bug-desc">${bug.desc}</div>
 
-  card.addEventListener('click', () => {
-    if (!card.classList.contains('revealed')) {
+<button class="feature-label" data-link="${bug.link}">
+${bug.feature}
+</button>
+`;
 
-      card.classList.add('revealed');
+card.addEventListener('click',()=>{
 
-      card.querySelector('.card-status span:last-child').textContent = 'REGISTERED';
+if(!card.classList.contains('revealed')){
 
-      revealed++;
+card.classList.add('revealed');
 
-      document.getElementById('counter').textContent =
-        `${revealed} / 6 bugs revelados`;
+card.querySelector('.card-status span:last-child').textContent='REGISTERED';
 
-      if (revealed === 6) {
-        setTimeout(() => {
-          document.querySelector('.footer-quote').style.opacity = '0.7';
-          document.querySelector('.footer-quote').style.transition = 'opacity 1s';
-        }, 400);
-      }
+revealed++;
 
-    }
-  });
+document.getElementById('counter').textContent=
+`${revealed} / ${bugs.length} bugs revelados`;
 
-  grid.appendChild(card);
-});
-document.addEventListener("click", function(e){
-
-  if(e.target.classList.contains("feature-label")){
-
-    e.stopPropagation(); // ← ESTO SOLUCIONA EL PROBLEMA
-
-    const text = e.target.textContent;
-
-    if(text.includes("aliados")){
-      window.location.href = "https://baphomet1984.github.io/alliados/";
-    }
-
-  }
+}
 
 });
-// ── CHAOS BUTTON ─────────────────────────────────────────────────
-let chaosActive = false;
-const chaosBtn = document.getElementById('chaosBtn');
-const chaosMsg = document.getElementById('chaosMsg');
-const messages = [
-  '// segmentation fault (core dumped)',
-  '// NullPointerException at line 42',
-  '// undefined is not a function',
-  '// maximum call stack exceeded',
-  '// FATAL: unexpected token }',
-  '// cannot read property of undefined',
-];
 
-let chaosTimeout;
+grid.appendChild(card);
 
-chaosBtn.addEventListener('click', () => {
-  chaosActive = !chaosActive;
-  document.body.classList.toggle('chaos', chaosActive);
-  chaosMsg.classList.add('visible');
-  chaosMsg.textContent = messages[Math.floor(Math.random() * messages.length)];
-
-  clearTimeout(chaosTimeout);
-  if (chaosActive) {
-    // auto-reveal a random unrevealed card after 1.5s (bug becomes feature)
-    chaosTimeout = setTimeout(() => {
-      const unrevealed = [...document.querySelectorAll('.bug-card:not(.revealed)')];
-      if (unrevealed.length) {
-        unrevealed[Math.floor(Math.random() * unrevealed.length)].click();
-        chaosMsg.textContent = '// bug accepted... transforming into feature ✓';
-      }
-      document.body.classList.remove('chaos');
-      chaosActive = false;
-      setTimeout(() => chaosMsg.classList.remove('visible'), 2500);
-    }, 1500);
-  } else {
-    setTimeout(() => chaosMsg.classList.remove('visible'), 2000);
-  }
 });
 
-// hover: add micro glitch to canvas particles
-document.querySelectorAll('.bug-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    for (let i = 0; i < 8; i++) {
-      const p = particles[Math.floor(Math.random() * particles.length)];
-      p.speedY = -2;
-      p.opacity = 0.8;
-    }
-  });
+// ── REDIRECCIÓN LIMPIA ────────────────────────────────────────────
+document.addEventListener("click",(e)=>{
+
+if(e.target.classList.contains("feature-label")){
+
+e.stopPropagation();
+
+const url = e.target.dataset.link;
+
+if(url && url !== "#"){
+window.location.href = url;
+}
+
+}
+
 });
 </script>
 </body>
