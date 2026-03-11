@@ -224,7 +224,12 @@
   color: var(--bg);
 }
 
-  .bug-card.revealed .feature-label { display: inline-block; opacity: 1; }
+  .feature-label{
+  display:none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+}
 
   .hint {
     font-size: 0.65rem;
@@ -514,7 +519,9 @@ bugs.forEach((bug, i) => {
     <div class="bug-name">${bug.name}</div>
     <div class="bug-desc">${bug.desc}</div>
 
-    <button class="feature-label">${bug.feature}</button>
+   <button class="feature-label" data-link="${bug.feature}">
+${bug.feature}
+</button>
   `;
 
   card.addEventListener('click', () => {
@@ -545,16 +552,16 @@ document.addEventListener("click", function(e){
 
   if(e.target.classList.contains("feature-label")){
 
-    e.stopPropagation(); // ← ESTO SOLUCIONA EL PROBLEMA
+    e.stopPropagation();
+    e.preventDefault();
 
-    const text = e.target.textContent;
-
-    if(text.includes("aliados")){
+    if(text.trim() === "aliados"){
       window.location.href = "https://baphomet1984.github.io/alliados/";
     }
 
   }
 
+});
 });
 // ── CHAOS BUTTON ─────────────────────────────────────────────────
 let chaosActive = false;
