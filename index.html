@@ -221,6 +221,12 @@ padding:6px 10px;
 font-size:0.7rem;
 margin-top:10px;
 cursor:pointer;
+text-decoration:none;
+color:var(--card-color, var(--green));
+}
+
+.feature-label:hover{
+background:rgba(255,255,255,0.05);
 }
 
 .bug-card.revealed .feature-label{
@@ -521,9 +527,9 @@ card.innerHTML=`
 <div class="bug-name">${bug.name}</div>
 <div class="bug-desc">${bug.desc}</div>
 
-<button class="feature-label" data-link="${bug.link}">
+<a class="feature-label" href="${bug.link}" target="_blank">
 ${bug.feature}
-</button>
+</a>
 `;
 
 card.addEventListener("click",(e)=>{
