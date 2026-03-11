@@ -549,15 +549,11 @@ btn.addEventListener("click",(e)=>{
 
 e.stopPropagation();
 
-const url = btn.dataset.link;
+const url = e.currentTarget.getAttribute("data-link");
 
 if(url && url !== "#"){
 window.location.href = url;
 }
-
-});
-
-grid.appendChild(card);
 
 });
 
