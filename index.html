@@ -529,7 +529,7 @@ ${bug.feature}
 card.addEventListener("click",(e)=>{
 
 // si el click fue en el botón → no revelar
-if(e.target.classList.contains("feature-label")) return;
+if(e.target.closest(".feature-label")) return;
 
 if(!card.classList.contains("revealed")){
 
