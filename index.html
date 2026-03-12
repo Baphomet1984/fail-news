@@ -387,7 +387,23 @@ margin-right:6px;
   .nav-btn.disabled .dot { background: rgba(255,68,204,0.22); animation: none; }
   .nav-btn.disabled:hover { color: rgba(204,68,255,0.28); box-shadow: none; }
   .nav-btn.disabled:hover::before { opacity: 0; }
+  
+  .hidden-btn{
+  opacity:0;
+  pointer-events:none;
+  margin-top:20px;
+  padding:10px 20px;
+  background:#111;
+  color:#00ffcc;
+  border:1px solid #00ffcc;
+  cursor:pointer;
+  transition:all 0.6s ease;
+}
 
+.hidden-btn.show{
+  opacity:1;
+  pointer-events:auto;
+}
 </style>
 </head>
 <body>
@@ -422,7 +438,9 @@ margin-right:6px;
     <div class="chaos-message" id="chaosMsg">// error inesperado... o ¿feature?</div>
     <div class="counter" id="counter">0 / 6 bugs revelados</div>
   </div>
-
+<button id="secret-btn" class="hidden-btn">
+→ Acceder al portal
+</button>
   <div class="footer-quote">
     "El sistema humano sigue fallando."
     SYSTEM LOG · hub.uplink.status : unstable · monitoring anomalies since 2025
@@ -598,6 +616,13 @@ chaosBtn.addEventListener('click', () => {
   } else {
     setTimeout(() => chaosMsg.classList.remove('visible'), 2000);
   }
+  if (revealed === 6) {
+
+  const secretBtn = document.getElementById("secret-btn");
+
+  secretBtn.classList.add("show");
+
+}
 });
 </script>
 </body>
