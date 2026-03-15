@@ -1,75 +1,77 @@
 {
   "bugs":[
-    {
-      "code":"ERR_0001 ::Actualizaciones del sistema",
-      "name":"Nuevo módulo detectado.",
-      "type":"alert",
-      "feature":"→ Portal de aliados",
-      "link":"https://baphomet1984.github.io/alliados/",
-      "desc":"Nombre: Portal de Aliados. Estado: activo."
-    },
 
-    {
-      "code":"ERR_0002 :: Reportes de visitantes",
-      "name":"Actividad inusual detectada.",
-      "type":"alert",
-      "feature":"→ Investigando…",
-      "link":"#",
-      "desc":"Países conectados hoy: México, Brasil, Alemania."
-    },
+{
+"type":"alert",
+"code":"WAR-001",
+"name":"Conflictos escalan en múltiples regiones",
+"desc":"Analistas reportan que varios conflictos armados activos están aumentando en intensidad. Sistemas de monitoreo militar detectan mayor tráfico de drones, satélites espía y movilización de armamento pesado. Algunos expertos advierten que el planeta está entrando en una nueva etapa de guerras tecnológicas híbridas.",
+"feature":"leer reporte",
+"link":"https://www.bbc.com/news/world"
+},
 
-    {
-      "code":"ERR_0003 ::Rumores del sistema",
-      "name":"Usuarios reportan una versión del hub que no aparece en el menú.",
-      "type":"system",
-      "feature":"→ El sistema no confirma ni niega",
-      "link":"#",
-      "desc":"Se dice que aparece solo después de las 3:33 AM."
-    },
+{
+"type":"system",
+"code":"AI-003",
+"name":"Modelos de IA generan código funcional sin supervisión",
+"desc":"Laboratorios tecnológicos reportan que nuevas generaciones de inteligencia artificial ya pueden diseñar software completo con mínima intervención humana. Algunos desarrolladores celebran la productividad. Otros sospechan que pronto nadie sabrá realmente cómo funcionan los sistemas que usamos.",
+"feature":"ver análisis",
+"link":"https://www.theverge.com/ai-artificial-intelligence"
+},
 
-    {
-      "code":"ERR_0004 ::Noticias del ecosistema",
-      "name":"El algoritmo volvió a cambiar",
-      "type":"system", 
-      "feature":"→ Resultado: nadie lo entiende",
-      "link":"#",
-      "desc":"Miles de creadores intentando entenderlo."
-    },
+{
+"type":"random",
+"code":"ODD-017",
+"name":"Extraños sonidos detectados en océanos profundos",
+"desc":"Sensores submarinos han registrado patrones acústicos no identificados en varias zonas del Pacífico. Investigadores aún no determinan si se trata de actividad geológica, criaturas desconocidas o simplemente interferencia tecnológica.",
+"feature":"ver reporte",
+"link":"https://www.nationalgeographic.com"
+},
 
-    {
-     "code":"ERR_0005 :: Cultura Pop",
-     "name":"Metallica vuelve a romper Spotify",
-     "type":"random",
-     "feature":"→ Abrir reporte",
-     "link":"#",
-     "desc":"El algoritmo del streaming colapsó otra vez por fans del metal."
-    },
+{
+"type":"alert",
+"code":"CRIME-044",
+"name":"Serie de asesinatos desconcierta a investigadores",
+"desc":"Autoridades de varias ciudades investigan una serie de homicidios con patrones similares. Las escenas presentan símbolos extraños y ausencia casi total de evidencia forense. Los perfiles criminales aún no logran determinar si se trata de un solo individuo o un grupo organizado.",
+"feature":"ver archivo",
+"link":"https://www.bbc.com/news/world-us-canada"
+},
 
-    {
-      "code":"ERR_0006 ::Puebla",
-      "name":"Puebla encabeza las muertes por influenza en México durante 2026.",
-      "type":"random",
-      "feature":"→ Moraleja del sistema",
-      "link":"#",
-      "desc":"29 fallecimientos y más de 14 mil consultas médicas."
-    },
-        {
-      "code":"ERR_0007 ::Actualizaciones del sistema",
-      "name":"Nuevo módulo detectado.",
-      "type":"rumor",
-      "feature":"→ Portal de aliados",
-      "link":"https://baphomet1984.github.io/alliados/",
-      "desc":"Nombre: Portal de Aliados. Estado: activo."
-    },
+{
+"type":"system",
+"code":"TECH-112",
+"name":"Hackers explotan vulnerabilidades en infraestructuras críticas",
+"desc":"Equipos de ciberseguridad detectaron intentos coordinados de intrusión contra sistemas industriales. Varias plantas energéticas reportaron actividad sospechosa en redes internas. Por ahora los ataques han sido contenidos, pero el incidente expone lo frágil que es la infraestructura digital global.",
+"feature":"ver alerta",
+"link":"https://www.wired.com/tag/hacking/"
+},
 
-    {
-      "code":"ERR_0008 :: Reportes de visitantes",
-      "name":"Actividad inusual detectada.",
-      "type":"rumor",
-      "feature":"→ Investigando…",
-      "link":"#",
-      "desc":"Países conectados hoy: México, Brasil, Alemania."
-    }
+{
+"type":"rumor",
+"code":"SIG-666",
+"name":"Usuarios reportan 'nodos fantasma' en la red",
+"desc":"En foros técnicos se habla de servidores que aparecen y desaparecen en mapas de tráfico global. Algunos creen que son pruebas militares, otros sospechan de redes clandestinas o sistemas experimentales que operan fuera del internet público.",
+"feature":"investigar",
+"link":"https://news.ycombinator.com/"
+},
+
+{
+"type":"random",
+"code":"BIO-021",
+"name":"Investigadores reactivan organismos congelados",
+"desc":"Científicos lograron reactivar microorganismos atrapados en hielo durante miles de años. Aunque el experimento es puramente científico, algunos expertos advierten que el deshielo del permafrost podría liberar especies desconocidas en el futuro.",
+"feature":"ver estudio",
+"link":"https://www.science.org/"
+},
+
+{
+"type":"rumor",
+"code":"CONSP-404",
+"name":"Se filtra documento sobre proyecto experimental",
+"desc":"Un supuesto documento filtrado describe un proyecto tecnológico capaz de monitorear comunicaciones globales en tiempo real mediante inteligencia artificial. No hay confirmación oficial, pero el archivo se está propagando rápidamente por redes alternativas.",
+"feature":"ver archivo",
+"link":"https://www.reuters.com/technology/"
+}
 
   ]
 }
