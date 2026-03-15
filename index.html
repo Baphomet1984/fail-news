@@ -537,20 +537,28 @@ function animate() {
 animate();
 
 // ── DATA ──────────────────────────────────────────────────────────
-const bugs = [
-  { code:'ERR_0001 ::Actualizaciones del sistema', name:'Nuevo módulo detectado.', color:'#00ff88', feature:'→ Portal de aliados', link:'https://www.google.com', desc:'Nombre: Portal de Aliados. Estado: activo.' },
-  { code:'ERR_0002 :: Reportes de visitantes', name:'Actividad inusual detectada.', color:'#ff3366', feature:'→ Investigando…', link:'#', desc:'Países conectados hoy: México, Brasil, Alemania.' },
-  { code:'ERR_0003 ::Rumores del sistema', name:'Usuarios reportan una versión del hub que no aparece en el menú.', color:'#ffb300', feature:'→ El sistema no confirma ni niega', link:'#', desc:'Se dice que aparece solo después de las 3:33 AM.' },
-  { code:'ERR_0004 ::Noticias del ecosistema', name:'El algoritmo volvió a cambiar', color:'#00ff88', feature:'→ Resultado: nadie lo entiende', link:'#', desc:'Miles de creadores intentando entenderlo.' },
-  { code:'ERR_0005 ::Alertas del sistema', name:'Intento de acceso detectado.', color:'#ff3366', feature:'→ Acceso bloqueado', link:'#', desc:'Origen desconocido. El gate respondió correctamente.' },
-  { code:'ERR_0006 ::Puebla', name:'Puebla encabeza las muertes por influenza en México durante 2026.', color:'#ffb300', feature:'→ Moraleja del sistema', link:'#', desc:'29 fallecimientos y más de 14 mil consultas médicas.' }
-];
 
+let bugs = [];
+
+fetch("news.json")
+  .then(res => res.json())
+  .then(data => {
+    bugs = data.bugs;
+    buildCards();
+  })
+  .catch(err => {
+    console.error("Error cargando news.json", err);
+  });
 // ── CARDS ─────────────────────────────────────────────────────────
+const grid = document.getElementById('grid');
+let revealed = 0;
+function buildCards(){
+
 const grid = document.getElementById('grid');
 let revealed = 0;
 
 bugs.forEach(bug => {
+
   const hasLink = bug.link && bug.link !== '#';
 
   // Wrapper que agrupa tarjeta + botón
@@ -561,11 +569,13 @@ bugs.forEach(bug => {
   const card = document.createElement('div');
   card.className = 'bug-card';
   card.style.setProperty('--card-color', bug.color);
+
   card.innerHTML = `
     <div class="card-status">
       <span class="status-dot"></span>
       <span style="opacity:0.4;color:${bug.color}">BUG</span>
     </div>
+
     <div class="bug-code">${bug.code}</div>
     <div class="bug-name">${bug.name}</div>
     <div class="bug-desc">${bug.desc}</div>
@@ -579,36 +589,38 @@ bugs.forEach(bug => {
 
   // Click tarjeta → solo revela
   card.addEventListener('click', function() {
+
     if (!card.classList.contains('revealed')) {
+
       card.classList.add('revealed');
       card.querySelector('.card-status span:last-child').textContent = 'REGISTERED';
-      revealed++;
-      document.getElementById('counter').textContent = `${revealed} / ${bugs.length} bugs revelados`;
 
-if (revealed === bugs.length) {
-  const secretBtn = document.getElementById("secret-btn");
-  secretBtn.classList.add("show");
-}
+      revealed++;
+
+      document.getElementById('counter').textContent =
+        `${revealed} / ${bugs.length} bugs revelados`;
+
+      if (revealed === bugs.length) {
+        const secretBtn = document.getElementById("secret-btn");
+        secretBtn.classList.add("show");
+      }
+
     }
+
   });
 
   // Click botón → solo navega (evento completamente separado)
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function(){
     window.location.href = bug.link;
-  });
-
-  card.addEventListener('mouseenter', () => {
-    for (let i = 0; i < 8; i++) {
-      const p = particles[Math.floor(Math.random() * particles.length)];
-      p.speedY = -2; p.opacity = 0.8;
-    }
   });
 
   wrapper.appendChild(card);
   if (hasLink) wrapper.appendChild(btn);
-  grid.appendChild(wrapper);
-});
 
+  grid.appendChild(wrapper);
+
+});
+}
 // ── CHAOS ─────────────────────────────────────────────────────────
 let chaosActive = false;
 const chaosBtn = document.getElementById('chaosBtn');
