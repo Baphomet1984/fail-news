@@ -37,12 +37,12 @@
     },
 
     {
-      "code":"ERR_0005 ::Alertas del sistema",
-      "name":"Intento de acceso detectado.",
-      "color":"#ff3366",
-      "feature":"→ Acceso bloqueado",
-      "link":"#",
-      "desc":"Origen desconocido. El gate respondió correctamente."
+      "code":"ERR_0005 :: Cultura Pop",
+ "name":"Metallica vuelve a romper Spotify",
+ "color":"#00ff88",
+ "feature":"→ Abrir reporte",
+ "link":"#",
+ "desc":"El algoritmo del streaming colapsó otra vez por fans del metal."
     },
 
     {
