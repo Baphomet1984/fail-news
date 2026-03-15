@@ -3,75 +3,57 @@
 
 {
 "type":"alert",
-"code":"WAR-001",
-"name":"Conflictos escalan en múltiples regiones",
-"desc":"Analistas reportan que varios conflictos armados activos están aumentando en intensidad. Sistemas de monitoreo militar detectan mayor tráfico de drones, satélites espía y movilización de armamento pesado. Algunos expertos advierten que el planeta está entrando en una nueva etapa de guerras tecnológicas híbridas.",
-"feature":"leer reporte",
-"link":"https://www.bbc.com/news/world"
+"code":"WAR-DRN-772",
+"name":"Drones autónomos redefinen el campo de batalla",
+"desc":"Analistas militares reportan un incremento masivo en el uso de enjambres de drones semiautónomos en conflictos recientes. La nueva generación de sistemas de ataque puede identificar objetivos con IA y coordinarse entre múltiples unidades. Algunos estrategas advierten que esta tecnología podría cambiar las reglas de la guerra moderna en menos de una década.",
+"feature":"ver informe",
+"link":"https://en.wikipedia.org/wiki/Loitering_munition"
 },
 
 {
 "type":"system",
-"code":"AI-003",
-"name":"Modelos de IA generan código funcional sin supervisión",
-"desc":"Laboratorios tecnológicos reportan que nuevas generaciones de inteligencia artificial ya pueden diseñar software completo con mínima intervención humana. Algunos desarrolladores celebran la productividad. Otros sospechan que pronto nadie sabrá realmente cómo funcionan los sistemas que usamos.",
-"feature":"ver análisis",
-"link":"https://www.theverge.com/ai-artificial-intelligence"
+"code":"TECH-AI-991",
+"name":"La carrera por los chips de IA se acelera",
+"desc":"Fabricantes de hardware están compitiendo por producir procesadores especializados en inteligencia artificial. Centros de datos y empresas tecnológicas están invirtiendo miles de millones para sostener la demanda de modelos cada vez más grandes.",
+"feature":"leer análisis",
+"link":"https://www.xataka.com/tag/inteligencia-artificial"
+},
+
+{
+"type":"rumor",
+"code":"TECH-NET-404",
+"name":"Internet está lleno de contenido generado por IA",
+"desc":"Investigadores aseguran que una parte creciente del contenido online ya no proviene de humanos. Blogs, noticias y comentarios podrían estar siendo escritos por sistemas automáticos. Algunos llaman a esto el inicio del 'internet sintético'.",
+"feature":"ver reporte",
+"link":"https://www.xataka.com/investigacion"
 },
 
 {
 "type":"random",
-"code":"ODD-017",
-"name":"Extraños sonidos detectados en océanos profundos",
-"desc":"Sensores submarinos han registrado patrones acústicos no identificados en varias zonas del Pacífico. Investigadores aún no determinan si se trata de actividad geológica, criaturas desconocidas o simplemente interferencia tecnológica.",
-"feature":"ver reporte",
-"link":"https://www.nationalgeographic.com"
+"code":"WORLD-ANOM-221",
+"name":"La lluvia de peces vuelve a ocurrir",
+"desc":"Habitantes de Yoro, Honduras, reportaron nuevamente el extraño fenómeno conocido como 'Lluvia de Peces'. Tras una tormenta intensa, peces aparecen esparcidos por las calles. Científicos siguen discutiendo si tornados acuáticos podrían explicar el fenómeno.",
+"feature":"ver fenómeno",
+"link":"https://en.wikipedia.org/wiki/Rain_of_animals"
 },
 
 {
 "type":"alert",
-"code":"CRIME-044",
-"name":"Serie de asesinatos desconcierta a investigadores",
-"desc":"Autoridades de varias ciudades investigan una serie de homicidios con patrones similares. Las escenas presentan símbolos extraños y ausencia casi total de evidencia forense. Los perfiles criminales aún no logran determinar si se trata de un solo individuo o un grupo organizado.",
-"feature":"ver archivo",
-"link":"https://www.bbc.com/news/world-us-canada"
-},
-
-{
-"type":"system",
-"code":"TECH-112",
-"name":"Hackers explotan vulnerabilidades en infraestructuras críticas",
-"desc":"Equipos de ciberseguridad detectaron intentos coordinados de intrusión contra sistemas industriales. Varias plantas energéticas reportaron actividad sospechosa en redes internas. Por ahora los ataques han sido contenidos, pero el incidente expone lo frágil que es la infraestructura digital global.",
-"feature":"ver alerta",
-"link":"https://www.wired.com/tag/hacking/"
+"code":"CRIME-ARCH-666",
+"name":"Archivos de asesinos seriales reabiertos",
+"desc":"Un equipo de investigadores forenses está reexaminando casos antiguos de asesinos seriales utilizando nuevas técnicas de ADN. Algunos expedientes cerrados podrían revelar víctimas que nunca fueron identificadas.",
+"feature":"ver archivos",
+"link":"https://en.wikipedia.org/wiki/Serial_killer"
 },
 
 {
 "type":"rumor",
-"code":"SIG-666",
-"name":"Usuarios reportan 'nodos fantasma' en la red",
-"desc":"En foros técnicos se habla de servidores que aparecen y desaparecen en mapas de tráfico global. Algunos creen que son pruebas militares, otros sospechan de redes clandestinas o sistemas experimentales que operan fuera del internet público.",
+"code":"NET-GLITCH-303",
+"name":"Usuarios reportan enlaces que desaparecen",
+"desc":"En foros de tecnología, varios usuarios aseguran haber visto enlaces que aparecen brevemente en páginas web y luego desaparecen al recargar. Algunos creen que se trata de pruebas de sistemas automatizados o contenido experimental.",
 "feature":"investigar",
-"link":"https://news.ycombinator.com/"
-},
-
-{
-"type":"random",
-"code":"BIO-021",
-"name":"Investigadores reactivan organismos congelados",
-"desc":"Científicos lograron reactivar microorganismos atrapados en hielo durante miles de años. Aunque el experimento es puramente científico, algunos expertos advierten que el deshielo del permafrost podría liberar especies desconocidas en el futuro.",
-"feature":"ver estudio",
-"link":"https://www.science.org/"
-},
-
-{
-"type":"rumor",
-"code":"CONSP-404",
-"name":"Se filtra documento sobre proyecto experimental",
-"desc":"Un supuesto documento filtrado describe un proyecto tecnológico capaz de monitorear comunicaciones globales en tiempo real mediante inteligencia artificial. No hay confirmación oficial, pero el archivo se está propagando rápidamente por redes alternativas.",
-"feature":"ver archivo",
-"link":"https://www.reuters.com/technology/"
+"link":"https://en.wikipedia.org/wiki/Glitch"
 }
 
-  ]
+]
 }
